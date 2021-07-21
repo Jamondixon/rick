@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import './App.css';
 // import CharacterContainer from './CharacterContainer';
-const baseURL = "https://rickandmortyapi.com/api/character"
+const baseURL = "https://star-wars-cafe-api.herokuapp.com/characters"
 
 class App extends Component {
 
@@ -20,11 +20,13 @@ class App extends Component {
   render () {
     console.log(this.state.characters)
     return (
-      <div >
+      <div  className="App">
         {this.state.characters.map(character => {
-          return <div className="character-card"></div>
+          return <div className="character-card">
+            <h2>{character.name}</h2>
+            <img src={character.image} alt={character.name} />
+          </div>
         })}
-        {/* <CharacterContainer charcters={this.state.characters}/> */}
       </div>
     );
   }  
