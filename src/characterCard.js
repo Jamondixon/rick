@@ -3,8 +3,9 @@ import React from 'react'
 export default function CharacterCard({character}) {
     return (
         <div className="character-card">
-            <h2>{character.name}</h2>
-            <img src={character.image} alt="characters"/>
+            <h2 className="character-name">{character.name}</h2>
+            <img className="character-image" src={character.image} alt="characters"/>
+            <h3 className="charcater-food">Favorite Food:  {character.favorite_food}</h3>
         </div>
     )
 }
