@@ -3,7 +3,7 @@ import './App.css';
 import CharacterContainer from './CharacterContainer';
 import FavoritesContainer from './FavoritesContainer';
 
-const baseURL = "https://star-wars-cafe-api.herokuapp.com/characters"
+const baseURL = "https://rickandmortyapi.com/api/character"
 
 class App extends Component {
 
@@ -17,13 +17,23 @@ class App extends Component {
   componentDidMount() {
     fetch(baseURL)
     .then(response => response.json())
-    .then(characters => this.setState({characters}))
+    .then(({results}) => this.setState({
+      characters:results
+    }))
   }
 
   addFavorite = (character) => {
     this.setState({
       favorites: [...this.state.favorites, character],
+    })
+  }
 
+  removeFavorite = (favoriteToRemove) => {
+    let filteredFavorites = this.state.favorites.filter(favorite => {
+      return favorite !== favoriteToRemove
+    })
+    this.setState({
+      favorites: filteredFavorites
     })
   }
 
@@ -31,7 +41,7 @@ class App extends Component {
     console.log(this.state.characters)
     return (
       <div  className="App">
-        <FavoritesContainer favorites={this.state.favorites} characters={this.state.characters} />
+        <FavoritesContainer favorites={this.state.favorites} characters={this.state.characters} removeFavorite={this.removeFavorite} />
         <CharacterContainer characters={this.state.characters} addFavorite={this.addFavorite}/>
       </div>
     );
