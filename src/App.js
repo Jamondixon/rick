@@ -2,6 +2,7 @@ import { Component } from 'react';
 import './App.css';
 import CharacterContainer from './CharacterContainer';
 import FavoritesContainer from './FavoritesContainer';
+import Heading from './Heading';
 
 const baseURL = "https://rickandmortyapi.com/api/character"
 
@@ -41,6 +42,7 @@ class App extends Component {
     console.log(this.state.characters)
     return (
       <div  className="App">
+        <Heading />
         <FavoritesContainer favorites={this.state.favorites} characters={this.state.characters} removeFavorite={this.removeFavorite} />
         <CharacterContainer characters={this.state.characters} addFavorite={this.addFavorite}/>
       </div>

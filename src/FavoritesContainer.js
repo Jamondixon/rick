@@ -7,6 +7,8 @@ export default function FavoritesContainer({characters,favorites,removeFavorite}
     })
     
     return <section className='favorite-container'>
-        {displayFavorites()}
+        <div>
+            {displayFavorites()}
+        </div>
     </section>
 }
