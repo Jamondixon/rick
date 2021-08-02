@@ -4,7 +4,7 @@ import CharacterContainer from './CharacterContainer';
 import FavoritesContainer from './FavoritesContainer';
 import Heading from './Heading';
 
-const baseURL = "https://rickandmortyapi.com/api/character"
+const baseURL = "https://rickandmortyapi.com/api/character/?Page=2"
 
 class App extends Component {
 
