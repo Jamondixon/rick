@@ -39,8 +39,8 @@ class App extends Component {
     return (
       <div  className="App">
         <Heading />
-        <FavoritesContainer favorites={this.state.favorites} characters={this.state.characters} removeFromFavorites={this.removeFromFavorites} />
-        <CharacterContainer characters={this.state.characters} addFavorite={this.addFavorite}/>
+        <FavoritesContainer favorites={this.state.favorites} characters={this.state.characters} clickAction={this.removeFromFavorites} />
+        <CharacterContainer characters={this.state.characters} clickAction={this.addFavorite}/>
       </div>
     );
   }  
